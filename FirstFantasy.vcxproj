@@ -74,6 +74,7 @@
     <LinkIncremental>true</LinkIncremental>
     <ExternalIncludePath>C:\Users\Paulo\source\repos\FrostWolfEngine_CPP\FrostWolfEngine;$(ExternalIncludePath)</ExternalIncludePath>
     <LibraryPath>C:\Users\Paulo\source\repos\FrostWolfEngine_CPP\FrostWolfEngine\Debug;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir);$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -142,7 +143,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Character\Character.cpp" />
+    <ClCompile Include="Combat\Combat.cpp" />
     <ClCompile Include="FirstFantasy.cpp" />
+    <ClCompile Include="Weapon\Weapon.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Character\Character.h" />
+    <ClInclude Include="Combat\Combat.h" />
+    <ClInclude Include="Weapon\Weapon.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
