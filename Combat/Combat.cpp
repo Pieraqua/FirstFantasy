@@ -1,7 +1,7 @@
 #include "Combat.h"
-#include "SystemOutput.h"
-#include "SystemInput.h"
-#include "Utils.h"
+#include "FrostWolfEngine/SystemOutput.h"
+#include "FrostWolfEngine/SystemInput.h"
+#include "FrostWolfEngine/Utils.h"
 
 bool Combat::handle_action(vector<string> user_action, Character* actor)
 {

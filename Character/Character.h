@@ -7,6 +7,9 @@ public:
 	static const int level_table[];
 
 	static int tests_character();
+	static Character random_character();
+
+	friend bool operator==(const Character& lhs, const Character& rhs);
 
 	// Ataca o personagem. Retorna o dano causado.
 	int hit(int attack_roll, int damage_roll);

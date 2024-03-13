@@ -72,9 +72,9 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <ExternalIncludePath>C:\Users\Paulo\source\repos\FrostWolfEngine_CPP\FrostWolfEngine;$(ExternalIncludePath)</ExternalIncludePath>
-    <LibraryPath>C:\Users\Paulo\source\repos\FrostWolfEngine_CPP\FrostWolfEngine\Debug;$(LibraryPath)</LibraryPath>
-    <IncludePath>$(SolutionDir);$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <ExternalIncludePath>$(SolutionDir)bin\depend\include;$(ExternalIncludePath)</ExternalIncludePath>
+    <LibraryPath>$(SolutionDir)bin\depend;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir);$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -146,11 +146,13 @@
     <ClCompile Include="Character\Character.cpp" />
     <ClCompile Include="Combat\Combat.cpp" />
     <ClCompile Include="FirstFantasy.cpp" />
+    <ClCompile Include="Party.cpp" />
     <ClCompile Include="Weapon\Weapon.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Character\Character.h" />
     <ClInclude Include="Combat\Combat.h" />
+    <ClInclude Include="Party.h" />
     <ClInclude Include="Weapon\Weapon.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

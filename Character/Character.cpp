@@ -1,7 +1,7 @@
 #include "Character.h"
 #include <assert.h>
-#include "Utils.h"
-#include "SystemOutput.h"
+#include "FrostWolfEngine/Utils.h"
+#include "FrostWolfEngine/SystemOutput.h"
 
 #define LEVEL_MAX 7
 const int Character::level_table[] = { 0, 300, 900, 2400, 4800, 9600, 19000, 999999 };
@@ -54,6 +54,12 @@ int Character::tests_character()
     return 0;
 }
 
+//Character(int level, int str, int con, int dex, int armor, int xp_val)
+Character Character::random_character()
+{
+    return Character(Utils::rolldx(20), Utils::rolldx(20), Utils::rolldx(20), Utils::rolldx(20), Utils::rolldx(20), Utils::rolldx(100));
+}
+
 int Character::heal(int heal_amount)
 {
     int healing = 0;
@@ -76,6 +82,7 @@ void Character::level_up()
 {
     this->level += 1;
     this->max_hp = con*level;
+    this->current_xp = 0;
 }
 
 int Character::attack(Character* target)
@@ -145,4 +152,21 @@ void Character::die()
 {
     this->alive = false;
     this->current_hp = 0;
+}
+
+bool operator==(const Character& lhs, const Character& rhs)
+{
+    if (lhs.alive == rhs.alive &&
+        lhs.armor == rhs.armor &&
+        lhs.con == rhs.con &&
+        lhs.dex == rhs.dex &&
+        lhs.level == rhs.level &&
+        lhs.max_hp == rhs.max_hp &&
+        lhs.name == rhs.name &&
+        lhs.str == rhs.str &&
+        lhs.xp_val == rhs.xp_val &&
+        lhs.current_hp == rhs.current_hp &&
+        lhs.current_xp == rhs.current_xp
+        ) return true;
+    return false;
 }

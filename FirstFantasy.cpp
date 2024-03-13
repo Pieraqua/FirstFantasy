@@ -2,15 +2,22 @@
 //
 
 #include <iostream>
-#include "SystemOutput.h"
+#include "FrostWolfEngine/SystemOutput.h"
 #include "Character/Character.h"
-#include "Utils.h"
+#include "FrostWolfEngine/Utils.h"
 #include "Combat/Combat.h"
+#include "Party.h"
 
 int main()
 {
     SystemOutput::getInstance()->printToConsole("Hello world!", SystemOutput::outputLevel::INFO);
     Utils::set_rand_seed(time(NULL));
+
+    // Bootup tests
+    //if (Party::test())
+    //    return 1;
+    if (Character::tests_character())
+        return 1;
 
     Character bob = Character();
     Character steve = Character();
